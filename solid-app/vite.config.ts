@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import solid from 'solid-start/vite'
+import solidSvg from 'vite-plugin-solid-svg'
 import path from 'path'
 
 export default defineConfig({
@@ -8,5 +9,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
-  plugins: [solid()],
+  plugins: [solid(), solidSvg()],
 })
