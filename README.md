@@ -1,3 +1,5 @@
+![elixor_brand_preview](https://github.com/ElixorTeam/Elixor/assets/45181349/5929af34-9d1f-4ad7-95e6-d6c563235a19)
+
 # Elixor
 
 ![SolidJS](https://img.shields.io/badge/SolidJS-2c4f7c?style=for-the-badge&logo=solid&logoColor=c8c9cb)
