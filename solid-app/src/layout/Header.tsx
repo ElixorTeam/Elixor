@@ -15,9 +15,9 @@ export default function Header() {
     <header
       class={`${
         showBorder()
-          ? 'border-b border-b-gray-200 dark:border-b-neutral-800'
+          ? 'border-b border-b-black/[.1] backdrop-blur-md dark:border-b-white/[.2]'
           : 'border-b-white/[.0]'
-      } sticky top-0 h-14 w-screen backdrop-blur-md transition-colors`}
+      } sticky top-0 z-30 h-14 w-screen transition-colors`}
     >
       <div class="mx-auto flex h-full w-full max-w-screen-2xl items-center justify-between px-5 md:px-10">
         <ElixorBrand class=" h-10 w-32 dark:fill-white md:w-44" />

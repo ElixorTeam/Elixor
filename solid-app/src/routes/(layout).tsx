@@ -1,14 +1,16 @@
 import { Outlet } from '@solidjs/router'
 import Header from '@/layout/Header'
+import Footer from '@/components/Footer'
 
 export default function Layout() {
   return (
-    <div class="min-h-screen max-w-[100vw] dark:bg-black dark:text-white">
+    <div class="relative min-h-screen max-w-[100vw]">
       <div class="h-full w-full">
         <Header />
-        <main class="mx-auto h-full max-w-screen-2xl">
+        <main class="h-full w-full">
           <Outlet />
         </main>
+        <Footer />
       </div>
     </div>
   )

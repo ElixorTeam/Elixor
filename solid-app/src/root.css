@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 html {
-    @apply overflow-x-hidden mr-[calc(-1_*_(100vw_-_100%))] scrollbar scrollbar-thumb-neutral-300 scrollbar-track-neutral-100 dark:scrollbar-thumb-neutral-500 dark:scrollbar-track-neutral-950
+    @apply overflow-x-hidden mr-[calc(-1_*_(100vw_-_100%))] scrollbar scrollbar-thumb-neutral-300 scrollbar-track-neutral-100 dark:scrollbar-thumb-neutral-500 dark:scrollbar-track-neutral-950 scroll-smooth
+}
+
+body {
+    @apply bg-white dark:bg-black text-black dark:text-white
 }
