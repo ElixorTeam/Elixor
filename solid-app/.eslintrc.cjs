@@ -10,8 +10,6 @@ module.exports = {
         "plugin:tailwindcss/recommended",
         "plugin:@typescript-eslint/recommended",
     ],
-    "overrides": [
-    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -19,7 +17,5 @@ module.exports = {
     },
     "plugins": [
         "@typescript-eslint"
-    ],
-    "rules": {
-    }
+    ]
 }
