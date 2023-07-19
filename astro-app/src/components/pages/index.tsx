@@ -1,13 +1,13 @@
 import team from '@/assets/team.png'
-import {FaBrandsJava, FaBrandsReact} from "solid-icons/fa";
-import {SiTypescript} from "solid-icons/si";
+import { FaBrandsJava, FaBrandsReact } from 'solid-icons/fa'
+import { SiTypescript } from 'solid-icons/si'
 import { For } from 'solid-js'
 
-function BlockTitle({ number, title }: { number: string; title: string }) {
+function BlockTitle(props: { number: string; title: string }) {
   return (
     <div class="flex items-baseline gap-2">
-      <p class="font-mono text-2xl">{number}.</p>
-      <p class="text-3xl tracking-tight">{title}</p>
+      <p class="font-mono text-2xl">{props.number}.</p>
+      <p class="text-3xl tracking-tight">{props.title}</p>
     </div>
   )
 }
@@ -70,7 +70,7 @@ export default function Home() {
           </For>
         </ul>
       </div>
-      <div class="mx-auto h-fit w-full max-w-screen-2xl py-20">
+      <div class="mx-auto h-fit w-full max-w-screen-2xl pb-20 pt-5">
         <div class="relative mx-5 max-w-2xl sm:mx-10 md:mx-20">
           <div class="absolute inset-0 flex items-center" aria-hidden="true">
             <div class="w-full border-t border-black dark:border-white" />

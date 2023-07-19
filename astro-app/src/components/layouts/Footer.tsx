@@ -1,9 +1,13 @@
-import {FaBrandsGithub, FaBrandsYoutube} from "solid-icons/fa";
+import { FaBrandsGithub, FaBrandsYoutube } from 'solid-icons/fa'
 import { For } from 'solid-js'
 
 export default function Footer() {
   const navigation = [
-    { name: 'Github', href: 'https://github.com/ElixorTeam', icon: FaBrandsGithub },
+    {
+      name: 'Github',
+      href: 'https://github.com/ElixorTeam',
+      icon: FaBrandsGithub,
+    },
     {
       name: 'Youtube',
       href: 'https://www.youtube.com/@baggerfast',
