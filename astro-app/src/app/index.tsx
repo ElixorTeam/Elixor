@@ -1,7 +1,6 @@
 import team from '@/assets/team.png'
-import ReactMark from '@/assets/react-mark.svg'
-import JavaMark from '@/assets/java-mark.svg'
-import TypescriptMark from '@/assets/typescript-mark.svg'
+import {FaBrandsJava, FaBrandsReact} from "solid-icons/fa";
+import {SiTypescript} from "solid-icons/si";
 import { For } from 'solid-js'
 
 function BlockTitle({ number, title }: { number: string; title: string }) {
@@ -93,9 +92,9 @@ export default function Home() {
               shortening service. Experience the power of brevity with us today!
             </p>
             <div class="flex gap-4 fill-zinc-500 pt-4 dark:fill-zinc-800">
-              <JavaMark class="h-6 w-6 hover:fill-zinc-200 dark:hover:fill-zinc-950" />
-              <TypescriptMark class="h-6 w-6 hover:fill-zinc-200 dark:hover:fill-zinc-950" />
-              <ReactMark class="h-6 w-6 hover:fill-zinc-200 dark:hover:fill-zinc-950" />
+              <FaBrandsJava class="h-6 w-6 hover:fill-zinc-200 dark:hover:fill-zinc-950" />
+              <SiTypescript class="h-6 w-6 hover:fill-zinc-200 dark:hover:fill-zinc-950" />
+              <FaBrandsReact class="h-6 w-6 hover:fill-zinc-200 dark:hover:fill-zinc-950" />
             </div>
           </div>
         </div>

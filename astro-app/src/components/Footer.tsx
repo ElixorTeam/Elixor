@@ -1,14 +1,13 @@
-import GithubMark from '@/assets/github-mark.svg'
-import YoutubeMark from '@/assets/youtube-mark.svg'
+import {FaBrandsGithub, FaBrandsYoutube} from "solid-icons/fa";
 import { For } from 'solid-js'
 
 export default function Footer() {
   const navigation = [
-    { name: 'Github', href: 'https://github.com/ElixorTeam', icon: GithubMark },
+    { name: 'Github', href: 'https://github.com/ElixorTeam', icon: FaBrandsGithub },
     {
       name: 'Youtube',
       href: 'https://www.youtube.com/@baggerfast',
-      icon: YoutubeMark,
+      icon: FaBrandsYoutube,
     },
   ]
   return (
