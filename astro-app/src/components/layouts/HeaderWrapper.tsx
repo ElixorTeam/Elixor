@@ -1,4 +1,5 @@
 import { createEffect, createSignal, JSXElement, onCleanup } from 'solid-js'
+import clsx from 'clsx'
 
 export default function HeaderWrapper(props: { children: JSXElement }) {
   const [showBorder, setShowBorder] = createSignal(false)
@@ -9,11 +10,12 @@ export default function HeaderWrapper(props: { children: JSXElement }) {
   })
   return (
     <header
-      class={`${
+      class={clsx(
         showBorder()
           ? 'border-b border-b-black/[.1] backdrop-blur-md dark:border-b-white/[.2]'
-          : 'border-b-white/[.0]'
-      } sticky top-0 z-30 h-14 w-screen transition-colors`}
+          : 'border-b-white/[.0]',
+        'sticky top-0 z-30 h-14 w-screen transition-colors'
+      )}
     >
       {props.children}
     </header>
