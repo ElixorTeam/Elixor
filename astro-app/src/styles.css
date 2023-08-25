@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        @apply overflow-x-hidden mr-[calc(-1_*_(100vw_-_100%))] scroll-smooth
-    }
+  html {
+    @apply overflow-x-hidden mr-[calc(-1_*_(100vw_-_100%))] scroll-smooth;
+  }
 
-    body {
-        @apply bg-white dark:bg-black text-black dark:text-white antialiased
-    }
+  body {
+    @apply bg-white dark:bg-black text-black dark:text-white antialiased;
+  }
 }
-

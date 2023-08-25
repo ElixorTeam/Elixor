@@ -15,7 +15,7 @@ export default function Footer() {
     },
   ]
   return (
-    <footer class="w-full border-t border-t-black/[.1] dark:border-t-white/[.2]">
+    <footer class="w-full">
       <div class="mx-auto max-w-7xl p-6 md:flex md:items-center md:justify-between lg:px-8">
         <div class="flex justify-center space-x-6 md:order-2">
           <For each={navigation}>
