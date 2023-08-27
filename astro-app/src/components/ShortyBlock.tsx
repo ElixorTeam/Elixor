@@ -14,7 +14,7 @@ const links = [
   },
 ]
 
-export default function ShortyBlock() {
+export default function ShortyBlock(props: { blockText: string }) {
   return (
     <div class="overflow-hidden py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -25,9 +25,7 @@ export default function ShortyBlock() {
                 Shorty
               </p>
               <p class="mt-4 text-lg lg:text-2xl font-light leading-8 tracking-tight ">
-                Streamline your links effortlessly. A user-friendly link
-                shortening service that saves space and simplifies sharing. Your
-                go-to tool for concise communication.
+                {props.blockText}
               </p>
               <ul class="mt-4 gap-4 flex">
                 <For each={links}>

@@ -1,9 +1,10 @@
 ---
 import '@/styles.css'
+import { astroI18n } from 'astro-i18n'
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={astroI18n.langCode}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />

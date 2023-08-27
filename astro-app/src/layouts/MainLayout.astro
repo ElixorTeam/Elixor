@@ -4,7 +4,19 @@ import Footer from '../components/Footer'
 import HeaderWrapper from '../components/HeaderWrapper'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import ElixorIcon from '@/components/ElixorIcon'
-import { HiOutlineLanguage } from 'solid-icons/hi'
+import LocaleMenu from '@/components/LocaleMenu'
+import { l } from 'astro-i18n'
+
+const localization = [
+  {
+    name: 'Russian',
+    link: l('', {}, 'ru'),
+  },
+  {
+    name: 'English',
+    link: l('', {}, 'en'),
+  },
+]
 ---
 
 <BaseLayout>
@@ -16,7 +28,7 @@ import { HiOutlineLanguage } from 'solid-icons/hi'
         <ElixorIcon class="h-10 w-32 dark:fill-white md:w-44" />
         <div class="flex h-10 items-center gap-6 md:gap-8">
           <ThemeSwitcher client:only="solid-js" />
-          <HiOutlineLanguage class="h-6 w-6" />
+          <LocaleMenu links={localization} client:only="solid-js" />
         </div>
       </div>
     </HeaderWrapper>

@@ -1,0 +1,96 @@
+---
+import avatar_danil from '@/assets/avatar_danil.jpg'
+import avatar_artyom from '@/assets/avatar_artyom.jpg'
+import avatar_gosha from '@/assets/avatar_grigory.jpg'
+import { t } from 'astro-i18n'
+const posts = [
+  {
+    comment: t('home.commentDanil'),
+    author: {
+      name: 'Danil Aleksandrov (BaggerFast)',
+      post: `${t('home.postFounder')} / ${t('home.postBackend')}`,
+      imageUrl: avatar_danil,
+    },
+  },
+  {
+    comment: t('home.commentArtyom'),
+    author: {
+      name: 'Artyom Vlasov (Ap73MKa)',
+      post: `${t('home.postCoFounder')} / ${t('home.postFullstack')}`,
+      imageUrl: avatar_artyom,
+    },
+  },
+  {
+    comment: t('home.commentGregory'),
+    author: {
+      name: 'Georgy Gusev',
+      post: `${t('home.postBackend')}`,
+      imageUrl: avatar_gosha,
+    },
+  },
+]
+---
+
+<ul class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
+  {
+    posts.map((post) => (
+      <li class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+        <div class="flex flex-1 flex-col justify-between bg-stone-50 p-6">
+          <div class="flex items-center">
+            <div class="shrink-0">
+              <span class="sr-only">{post.author.name}</span>
+              <img
+                class="h-14 w-14 rounded-full"
+                src={post.author.imageUrl.src}
+                alt=""
+              />
+            </div>
+            <div class="ml-3">
+              <h2 class="line-clamp-1 font-semibold text-gray-900">
+                {post.author.name}
+              </h2>
+              <h5 class="line-clamp-1 text-sm text-gray-500">
+                {post.author.post}
+              </h5>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="mt-4 lg:text-lg text-gray-900">{post.comment}</h3>
+          </div>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+
+<!--<div class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">-->
+<!--  {-->
+<!--    posts.map((post) => (-->
+<!--      <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">-->
+<!--        <div class="flex flex-1 flex-col justify-between bg-stone-50 p-6">-->
+<!--          <div class="flex items-center">-->
+<!--            <div class="shrink-0">-->
+<!--              <span class="sr-only">{post.author.name}</span>-->
+<!--              <img-->
+<!--                class="h-14 w-14 rounded-full"-->
+<!--                src={post.author.imageUrl.src}-->
+<!--                alt=""-->
+<!--              />-->
+<!--            </div>-->
+<!--            <div class="ml-3">-->
+<!--              <p class="line-clamp-1 font-semibold text-gray-900">-->
+<!--                {post.author.name}-->
+<!--              </p>-->
+<!--              <p class="line-clamp-1 text-sm text-gray-500">-->
+<!--                {post.author.post}-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="flex-1">-->
+<!--            <p class="mt-4 lg:text-lg text-gray-900">{post.comment}</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    ))-->
+<!--  }-->
+<!--</div>-->
