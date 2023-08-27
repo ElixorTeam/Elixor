@@ -1,6 +1,7 @@
 ---
 import '@/styles.css'
 import { astroI18n } from 'astro-i18n'
+import { HrefLangs } from 'astro-i18n/components'
 ---
 
 <!DOCTYPE html>
@@ -11,6 +12,7 @@ import { astroI18n } from 'astro-i18n'
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/ico" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <HrefLangs />
     <title>Elixor</title>
     <script is:inline>
       const theme = (() => {
