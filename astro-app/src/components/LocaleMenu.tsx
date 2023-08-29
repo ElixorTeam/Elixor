@@ -36,7 +36,7 @@ export default function LocaleMenu(props: { links: LinkListType[] }) {
               unmount={false}
               class="absolute right-1/2 z-10 mt-2 translate-x-5 px-4 sm:px-0"
             >
-              <Menu class="flex list-none flex-col rounded-md bg-white/[.3] px-2 py-3 shadow-lg ring-1 ring-black/[.1] backdrop-blur-md dark:bg-black/[.2] dark:ring-white/[.2]">
+              <Menu class="flex list-none flex-col rounded-md bg-white/[.3] px-2 py-3 shadow-lg ring-1 ring-black/[.1] before:backdrop-blur-md before:backdrop-hack dark:bg-black/[.2] dark:ring-white/[.2]">
                 <For each={props.links}>
                   {(link) => (
                     <MenuItem

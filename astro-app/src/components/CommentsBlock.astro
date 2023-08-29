@@ -1,5 +1,5 @@
 ---
-import { For } from "solid-js";
+import { For } from 'solid-js'
 import avatar_danil from '@/assets/avatar_danil.jpg'
 import avatar_artyom from '@/assets/avatar_artyom.jpg'
 import avatar_gosha from '@/assets/avatar_grigory.jpg'
@@ -44,7 +44,8 @@ const posts: PostType[] = [
 ---
 
 <ul class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-  <For each={posts}>{(post) => (
+  {
+    posts.map((post) => (
       <li class="flex flex-col overflow-hidden rounded-lg shadow-lg">
         <div class="flex flex-1 flex-col justify-between bg-stone-50 p-6">
           <div class="flex items-center">
@@ -70,5 +71,6 @@ const posts: PostType[] = [
           </div>
         </div>
       </li>
-    )}</For>
+    ))
+  }
 </ul>

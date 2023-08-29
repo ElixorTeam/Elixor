@@ -11,3 +11,13 @@
     @apply bg-white dark:bg-black text-black dark:text-white antialiased;
   }
 }
+
+@layer utilities {
+  .dark {
+    color-scheme: dark;
+  }
+
+  .backdrop-hack {
+    @apply absolute inset-0 -z-10;
+  }
+}
