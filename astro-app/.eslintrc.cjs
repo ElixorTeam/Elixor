@@ -10,11 +10,14 @@ module.exports = {
     'plugin:astro/recommended',
     'plugin:astro/jsx-a11y-recommended',
     'plugin:solid/typescript',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:tailwindcss/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    tsconfigRootDir: './src',
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
@@ -27,6 +30,22 @@ module.exports = {
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.astro'],
       },
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+        'import/no-unresolved': 'off',
+        'no-undef': 'off',
+      },
     },
   ],
+  settings: {
+    'import/resolver': {
+      typescript: true,
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
+  rules: {
+    '@typescript-eslint/triple-slash-reference': 'off',
+  },
 }

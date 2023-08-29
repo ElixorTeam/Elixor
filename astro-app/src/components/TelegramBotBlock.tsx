@@ -22,7 +22,7 @@ export default function TelegramBotBlock() {
           </a>
         </div>
       </div>
-      <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
+      <div class="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow">
         <svg
           viewBox="0 0 366 729"
           role="img"

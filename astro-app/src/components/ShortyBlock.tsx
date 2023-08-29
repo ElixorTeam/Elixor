@@ -1,4 +1,4 @@
-import app_screenshoot from '@/assets/shorty_app_screenshoot.jpg'
+import appScreenshoot from '@/assets/shorty_app_screenshoot.jpg'
 import { VsGithubAlt } from 'solid-icons/vs'
 import { HiSolidLink } from 'solid-icons/hi'
 import { For } from 'solid-js'
@@ -21,13 +21,13 @@ export default function ShortyBlock(props: { blockText: string }) {
         <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div class="lg:pr-8 lg:pt-4">
             <div class="lg:flex lg:max-w-lg lg:flex-col lg:justify-center lg:text-left">
-              <p class="mt-2 text-2xl lg:text-4xl font-extralight uppercase tracking-tight text-sky-400 sm:text-4xl">
+              <p class="mt-2 text-2xl font-extralight uppercase tracking-tight text-sky-400 sm:text-4xl lg:text-4xl">
                 Shorty
               </p>
-              <p class="mt-4 text-lg lg:text-2xl font-light leading-8 tracking-tight ">
+              <p class="mt-4 text-lg font-light leading-8 tracking-tight lg:text-2xl ">
                 {props.blockText}
               </p>
-              <ul class="mt-4 gap-4 flex">
+              <ul class="mt-4 flex gap-4">
                 <For each={links}>
                   {(link) => (
                     <li>
@@ -45,7 +45,7 @@ export default function ShortyBlock(props: { blockText: string }) {
           </div>
           <div class="flex items-center">
             <img
-              src={app_screenshoot.src}
+              src={appScreenshoot.src}
               alt="Product screenshot"
               class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
             />
