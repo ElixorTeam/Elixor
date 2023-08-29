@@ -3,8 +3,8 @@ type SupportedLangCode = "ru"
 type LangCode = DefaultLangCode | SupportedLangCode
 type RouteUri = | "/" 
 type RouteParams = {"/": undefined; }
-type TranslationPath = "home.slogan"
-type TranslationOptions = { "home.slogan": {} | undefined; }
+type TranslationPath = "home.slogan" | "home.sloganButton" | "home.aboutBlock" | "home.postFounder" | "home.postCoFounder" | "home.postBackend" | "home.postFullstack" | "home.postFrontend" | "home.commentDanil" | "home.commentArtyom" | "home.commentGregory" | "home.projectsTitle" | "home.shortyBlock"
+type TranslationOptions = { "home.slogan": {} | undefined; "home.sloganButton": {} | undefined; "home.aboutBlock": {} | undefined; "home.postFounder": {} | undefined; "home.postCoFounder": {} | undefined; "home.postBackend": {} | undefined; "home.postFullstack": {} | undefined; "home.postFrontend": {} | undefined; "home.commentDanil": {} | undefined; "home.commentArtyom": {} | undefined; "home.commentGregory": {} | undefined; "home.projectsTitle": {} | undefined; "home.shortyBlock": {} | undefined; }
 
 declare module "astro-i18n" {
 	export * from "astro-i18n/"
