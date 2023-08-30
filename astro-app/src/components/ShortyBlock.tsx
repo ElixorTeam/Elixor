@@ -33,7 +33,7 @@ export default function ShortyBlock(props: { blockText: string }) {
                     <li>
                       <a href={link.url} target="_blank">
                         <link.icon
-                          class="h-8 w-8 fill-gray-400 text-gray-400 transition ease-in-out
+                          class="h-8 w-8 fill-sky-400 text-sky-400 transition ease-in-out
                         hover:fill-gray-600 hover:text-gray-600 dark:hover:fill-gray-200 dark:hover:text-gray-200"
                         />
                       </a>
