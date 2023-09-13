@@ -6,9 +6,9 @@ import {
   Menu,
   MenuItem,
 } from 'solid-headless'
+import { BsArrowUpRight } from 'solid-icons/bs'
 import { HiOutlineLanguage } from 'solid-icons/hi'
 import { For } from 'solid-js'
-import { BsArrowUpRight } from 'solid-icons/bs'
 
 type LinkListType = {
   name: string

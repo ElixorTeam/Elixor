@@ -2,10 +2,10 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    es2021: true,
-    node: true,
   },
   extends: [
+    'airbnb-base',
+    'airbnb-typescript/base',
     'eslint:recommended',
     'plugin:astro/recommended',
     'plugin:astro/jsx-a11y-recommended',
@@ -14,14 +14,14 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:tailwindcss/recommended',
     'plugin:@typescript-eslint/recommended',
+    'prettier'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    tsconfigRootDir: './src',
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    tsconfigRootDir: __dirname,
+    project: ['./tsconfig.json'],
   },
-  plugins: ['solid', '@typescript-eslint'],
+  plugins: ['solid'],
   overrides: [
     {
       files: ['*.astro'],
@@ -31,22 +31,43 @@ module.exports = {
         extraFileExtensions: ['.astro'],
       },
       rules: {
-        '@typescript-eslint/no-unused-vars': 'off',
         'import/no-unresolved': 'off',
-        'no-undef': 'off',
         'solid/prefer-for': 'off',
       },
     },
   ],
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
-      typescript: true,
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.json',
       },
     },
   },
   rules: {
     '@typescript-eslint/triple-slash-reference': 'off',
+    'import/no-unresolved': 'error',
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          ['sibling', 'parent'],
+          'index',
+          'unknown',
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
+
 }

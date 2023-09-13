@@ -1,10 +1,11 @@
 ---
-import MainLayout from '@/layouts/MainLayout.astro'
-import bg from '@/assets/bg.webp'
-import ElixorIcon from '@/components/ElixorIcon'
-import CommentsBlock from '@/components/CommentsBlock.astro'
-import ShortyBlock from '@/components/ShortyBlock'
 import { t, astroI18n } from 'astro-i18n'
+
+import bg from '@/assets/bg.webp'
+import CommentsBlock from '@/components/CommentsBlock.astro'
+import ElixorIcon from '@/components/ElixorIcon'
+import ShortyBlock from '@/components/ShortyBlock'
+import MainLayout from '@/layouts/MainLayout.astro'
 
 astroI18n.init(Astro)
 ---
@@ -41,7 +42,7 @@ astroI18n.init(Astro)
         </div>
       </div>
     </div>
-    <div class="w-full bg-white py-20 dark:bg-black lg:py-40" id="about">
+    <div class="w-full bg-white py-20 dark:bg-stone-950 lg:py-40" id="about">
       <div class="mx-auto flex max-w-screen-2xl flex-col items-center lg:gap-6">
         <ElixorIcon class="h-16 w-40 dark:fill-white md:w-80" />
         <p
@@ -54,12 +55,12 @@ astroI18n.init(Astro)
         </div>
       </div>
     </div>
-    <div class="mx-auto w-full bg-white text-center dark:bg-black">
+    <div class="mx-auto w-full bg-white text-center dark:bg-stone-950">
       <p class="text-2xl font-extralight uppercase lg:text-5xl">
         {t('home.projectsTitle')}
       </p>
     </div>
-    <div class="w-full bg-white dark:bg-black">
+    <div class="w-full bg-white dark:bg-stone-950">
       <div class="overflow-hidden py-10 md:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <ShortyBlock blockText={t('home.shortyBlock')} />

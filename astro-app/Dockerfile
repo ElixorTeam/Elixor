@@ -2,13 +2,14 @@
 FROM node:lts-alpine as base
 
 WORKDIR /app
-RUN npm install -g pnpm --silent
+
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # Stage 2
 FROM base AS deps
 
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm i --frozen-lockfile --recursive --prod
+RUN pnpm fetch --prod && pnpm i -r --offline --prod
 
 # Stage 3
 FROM base AS build
@@ -20,12 +21,12 @@ RUN pnpm build && pnpm prune
 # Stage 4
 FROM base AS runner
 
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=build /app/dist ./dist
-
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3000
 EXPOSE 3000
+
+COPY --from=deps /app/node_modules ./node_modules
+COPY --from=build /app/dist ./dist
 
 CMD ["node", "./dist/server/entry.mjs"]

@@ -2,9 +2,9 @@ import clsx from 'clsx'
 import { createSignal, JSXElement, onCleanup, createEffect } from 'solid-js'
 
 export default function HeaderWrapper(props: { children: JSXElement }) {
-  const [showBorder, setShowBorder] = createSignal(false)
+  const [isVisibleBorder, setIsVisibleBorder] = createSignal(false)
   createEffect(() => {
-    const handleScroll = () => setShowBorder(window.pageYOffset > 10)
+    const handleScroll = () => setIsVisibleBorder(window.pageYOffset > 10)
     handleScroll()
     window.addEventListener('scroll', handleScroll)
     onCleanup(() => window.removeEventListener('scroll', handleScroll))
@@ -12,7 +12,7 @@ export default function HeaderWrapper(props: { children: JSXElement }) {
   return (
     <header
       class={clsx(
-        showBorder()
+        isVisibleBorder()
           ? 'before:backdrop-hack border-b-black/[.1] before:backdrop-blur-md dark:border-b-white/[.2]'
           : 'border-b-transparent',
         'fixed top-0 z-30 h-16 w-screen border-b transition duration-300'

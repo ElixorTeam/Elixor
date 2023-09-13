@@ -1,11 +1,13 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import Footer from '../components/Footer'
-import HeaderWrapper from '../components/HeaderWrapper'
-import ThemeSwitcher from '@/components/ThemeSwitcher'
+import { l } from 'astro-i18n'
+
 import ElixorIcon from '@/components/ElixorIcon'
 import LocaleMenu from '@/components/LocaleMenu'
-import { l } from 'astro-i18n'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+
+import Footer from '../components/Footer'
+import HeaderWrapper from '../components/HeaderWrapper'
 
 const localization = [
   {
@@ -35,7 +37,7 @@ const localization = [
     <main class="mx-auto h-full w-full flex-auto">
       <slot />
     </main>
-    <div class="bg-white dark:bg-black">
+    <div class="bg-white dark:bg-stone-950">
       <Footer />
     </div>
   </div>

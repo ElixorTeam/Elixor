@@ -1,7 +1,8 @@
-import appScreenshoot from '@/assets/shorty_app_screenshoot.jpg'
-import { VsGithubAlt } from 'solid-icons/vs'
 import { HiSolidLink } from 'solid-icons/hi'
+import { VsGithubAlt } from 'solid-icons/vs'
 import { For } from 'solid-js'
+
+import appScreenshoot from '@/assets/shorty_app_screenshoot.jpg'
 
 const links = [
   {
