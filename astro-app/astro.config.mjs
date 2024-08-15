@@ -1,22 +1,23 @@
-import i18n from "astro-i18n"
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
-import solid from '@astrojs/solid-js'
-import node from '@astrojs/node'
 
+import solidJs from '@astrojs/solid-js'
+
+// https://astro.build/config
 export default defineConfig({
+  site: 'https://elixorteam.github.io',
+  base: 'Elixor',
   integrations: [
     tailwind({
       applyBaseStyles: false,
     }),
-    solid(),
-    i18n(),
+    solidJs(),
   ],
-  output: 'hybrid',
-  adapter: node({
-    mode: 'standalone',
-  }),
-  experimental: {
-    assets: true
-  }
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'ru'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 })

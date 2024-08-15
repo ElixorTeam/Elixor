@@ -42,8 +42,7 @@ export default function LocaleMenu(props: { links: LinkListType[] }) {
                     <MenuItem
                       as="a"
                       href={link.link}
-                      class="flex w-full items-center gap-2 rounded-md px-6 py-2 text-left text-xl font-light leading-5 text-gray-800 hover:bg-white/[.2]
-                       hover:text-black dark:text-white dark:hover:bg-white/[.1]"
+                      class="flex w-full items-center gap-2 rounded-md px-6 py-2 text-left text-xl font-light leading-5 text-gray-800 hover:bg-white/[.2] hover:text-black dark:text-white dark:hover:bg-white/[.1]"
                     >
                       {link.name}
                       <BsArrowUpRight class="mt-1 h-3 w-3 text-gray-400" />

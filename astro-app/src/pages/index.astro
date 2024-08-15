@@ -1,14 +1,15 @@
 ---
-import { t, astroI18n } from 'astro-i18n'
+import bg from '@/shared/assets/bg.webp'
+import CommentsBlock from '@/widgets/comments-block.astro'
+import ElixorIcon from '@/features/elixor-icon'
+import ShortyBlock from '@/widgets/shorty-block'
+import YoutubeVideo from '@/widgets/youtube-video'
+import MainLayout from '@/app/layouts/main-layout.astro'
 
-import bg from '@/assets/bg.webp'
-import CommentsBlock from '@/components/CommentsBlock.astro'
-import ElixorIcon from '@/components/ElixorIcon'
-import ShortyBlock from '@/components/ShortyBlock'
-import YoutubeVideo from '@/components/YoutubeVideo'
-import MainLayout from '@/layouts/MainLayout.astro'
+import { getLangFromUrl, useTranslations } from '@/shared/i18n'
 
-astroI18n.init(Astro)
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <MainLayout>
@@ -43,9 +44,9 @@ astroI18n.init(Astro)
         </div>
       </div>
     </div>
-    <div class="w-full bg-white py-20 dark:bg-stone-950 lg:py-40" id="about">
+    <div class="w-full bg-white py-20 lg:py-40 dark:bg-stone-950" id="about">
       <div class="mx-auto flex max-w-screen-2xl flex-col items-center lg:gap-6">
-        <ElixorIcon class="h-16 w-40 dark:fill-white md:w-80" />
+        <ElixorIcon class="h-16 w-40 md:w-80 dark:fill-white" />
         <p
           class="max-w-xl px-10 text-center text-lg font-light tracking-tighter md:text-2xl"
         >

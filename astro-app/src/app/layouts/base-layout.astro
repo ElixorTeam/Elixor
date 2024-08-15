@@ -1,18 +1,17 @@
 ---
-import '@/styles.css'
-import { astroI18n } from 'astro-i18n'
-import { HrefLangs } from 'astro-i18n/components'
+import '@/app/styles.css'
+import { getLangFromUrl } from '@/shared/i18n'
+const lang = getLangFromUrl(Astro.url)
 ---
 
-<!DOCTYPE html>
-<html lang={astroI18n.langCode}>
+<!doctype html>
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <HrefLangs />
     <title>Elixor</title>
     <script is:inline>
       const theme = (() => {

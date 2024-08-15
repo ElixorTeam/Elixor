@@ -1,22 +1,25 @@
 ---
-import { l } from 'astro-i18n'
+import ElixorIcon from '@/features/elixor-icon'
+import LocaleMenu from '@/features/locale-menu'
+import ThemeSwitcher from '@/features/theme-switcher'
+import BaseLayout from '@/app/layouts/base-layout.astro'
 
-import ElixorIcon from '@/components/ElixorIcon'
-import LocaleMenu from '@/components/LocaleMenu'
-import ThemeSwitcher from '@/components/ThemeSwitcher'
-import BaseLayout from '@/layouts/BaseLayout.astro'
+import Footer from '@/widgets/footer'
+import HeaderWrapper from '@/widgets/header-wrapper'
 
-import Footer from '../components/Footer'
-import HeaderWrapper from '../components/HeaderWrapper'
+import { useTranslatedPath } from '@/shared/i18n'
+
+const ruPath = useTranslatedPath('ru')
+const enPath = useTranslatedPath('en')
 
 const localization = [
   {
     name: 'Russian',
-    link: l('', {}, 'ru'),
+    link: ruPath('/'),
   },
   {
     name: 'English',
-    link: l('', {}, 'en'),
+    link: enPath('/'),
   },
 ]
 ---
@@ -27,7 +30,7 @@ const localization = [
       <div
         class="mx-auto flex h-full w-full max-w-screen-2xl items-center justify-between px-5 md:px-10"
       >
-        <ElixorIcon class="h-10 w-32 dark:fill-white md:w-44" />
+        <ElixorIcon class="h-10 w-32 md:w-44 dark:fill-white" />
         <div class="flex h-10 items-center gap-6 md:gap-8">
           <ThemeSwitcher client:only="solid-js" />
           <LocaleMenu links={localization} client:only="solid-js" />

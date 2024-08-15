@@ -15,9 +15,9 @@ export default function ThemeSwitcher() {
   return (
     <button onClick={switchTheme}>
       {theme() === 'dark' ? (
-        <HiSolidMoon class="h-6 w-6" />
+        <HiSolidMoon class="size-6" />
       ) : (
-        <HiSolidSun class="h-6 w-6" />
+        <HiSolidSun class="size-6" />
       )}
     </button>
   )

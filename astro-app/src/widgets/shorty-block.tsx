@@ -2,7 +2,7 @@ import { HiSolidLink } from 'solid-icons/hi'
 import { VsGithubAlt } from 'solid-icons/vs'
 import { For } from 'solid-js'
 
-import appScreenshoot from '@/assets/shorty_app_screenshoot.jpg'
+import appScreenshoot from '@/shared/assets/shorty-app-screenshoot.jpg'
 
 const links = [
   {
@@ -23,7 +23,7 @@ export default function ShortyBlock(props: { blockText: string }) {
           <p class="mt-2 text-2xl font-extralight uppercase tracking-tight text-sky-400 sm:text-4xl lg:text-4xl">
             Shorty
           </p>
-          <p class="mt-4 text-lg font-light leading-8 tracking-tight lg:text-2xl ">
+          <p class="mt-4 text-lg font-light leading-8 tracking-tight lg:text-2xl">
             {props.blockText}
           </p>
           <ul class="mt-4 flex gap-4">
@@ -31,10 +31,7 @@ export default function ShortyBlock(props: { blockText: string }) {
               {(link) => (
                 <li>
                   <a href={link.url} target="_blank">
-                    <link.icon
-                      class="h-6 w-6 fill-sky-400 text-sky-400 transition ease-in-out hover:fill-gray-600 hover:text-gray-600
-                        dark:hover:fill-gray-200 dark:hover:text-gray-200 lg:h-8 lg:w-8"
-                    />
+                    <link.icon class="h-6 w-6 fill-sky-400 text-sky-400 transition ease-in-out hover:fill-gray-600 hover:text-gray-600 lg:h-8 lg:w-8 dark:hover:fill-gray-200 dark:hover:text-gray-200" />
                   </a>
                 </li>
               )}

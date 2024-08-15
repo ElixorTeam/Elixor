@@ -27,8 +27,7 @@ export default function Footer() {
               >
                 <span class="sr-only">{nav.name}</span>
                 <nav.icon
-                  class="h-6 w-6 fill-zinc-700 transition-colors hover:fill-zinc-900 dark:fill-zinc-500
-                   dark:hover:fill-zinc-300"
+                  class="h-6 w-6 fill-zinc-700 transition-colors hover:fill-zinc-900 dark:fill-zinc-500 dark:hover:fill-zinc-300"
                   aria-hidden="true"
                 />
               </a>

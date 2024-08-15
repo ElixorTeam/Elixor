@@ -1,10 +1,15 @@
 import clsx from 'clsx'
-import { createSignal, JSXElement, onCleanup, createEffect } from 'solid-js'
+import {
+  createSignal,
+  type JSXElement,
+  onCleanup,
+  createEffect,
+} from 'solid-js'
 
 export default function HeaderWrapper(props: { children: JSXElement }) {
   const [isVisibleBorder, setIsVisibleBorder] = createSignal(false)
   createEffect(() => {
-    const handleScroll = () => setIsVisibleBorder(window.pageYOffset > 10)
+    const handleScroll = () => setIsVisibleBorder(window.scrollY > 10)
     handleScroll()
     window.addEventListener('scroll', handleScroll)
     onCleanup(() => window.removeEventListener('scroll', handleScroll))
