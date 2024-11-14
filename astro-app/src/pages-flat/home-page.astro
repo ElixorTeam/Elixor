@@ -1,0 +1,122 @@
+---
+import { Button } from '@/shared/ui/button'
+import ThemeSwitcher from '@/features/theme-switcher.svelte'
+import GithubIcon from 'lucide-svelte/icons/github'
+import ElixorIcon from '@/shared/ui/elixor-icon.svelte'
+import ScrollHeaderWrapper from '@/features/scroll-header-wrapper.svelte'
+import SimpleLogo from '@/features/simple-logo.svelte'
+import InfinityScrollTeam from '@/features/infinity-scroll-team.astro'
+import AppsOverview from '@/features/apps-overview.astro'
+---
+
+<div class="relative min-h-screen w-full">
+  <ScrollHeaderWrapper
+    client:only="svelte"
+    scrollY="50"
+    class="sticky top-0 z-50 w-full overflow-hidden px-2 py-2"
+    classScroll="[&_header]:backdrop-blur [&_header]:border-opacity-100"
+  >
+    <header
+      class="mx-auto flex size-full max-w-screen-xl items-center justify-between gap-4 rounded-lg border border-opacity-0 bg-background/50 px-3 py-2 transition-colors sm:px-6"
+    >
+      <div class="flex items-center gap-16">
+        <ElixorIcon class="h-10 w-32 fill-primary pb-px" />
+        <div class="hidden items-center gap-10 md:flex">
+          <a
+            href="#home"
+            class="text-sm font-light tracking-wider text-muted-foreground transition-colors hover:text-primary"
+          >
+            Home
+          </a>
+          <a
+            href="#products"
+            class="text-sm font-light tracking-wider text-muted-foreground transition-colors hover:text-primary"
+          >
+            Products
+          </a>
+          <a
+            href="#team"
+            class="text-sm font-light tracking-wider text-muted-foreground transition-colors hover:text-primary"
+          >
+            Team
+          </a>
+        </div>
+      </div>
+      <div class="flex items-center gap-1">
+        <Button as="a" href="#" size="icon" variant="ghost">
+          <GithubIcon class="size-4" />
+        </Button>
+        <ThemeSwitcher client:only="svelte" />
+      </div>
+    </header>
+  </ScrollHeaderWrapper>
+  <div
+    id="home"
+    class="mx-auto grid w-full max-w-screen-xl overflow-x-hidden py-4 md:h-[90vh] md:grid-cols-2"
+  >
+    <div class="flex h-full flex-col justify-center gap-3 pl-7">
+      <div
+        class="flex h-7 w-fit items-center gap-2 rounded-lg border border-blue-600 bg-blue-500/30 px-3"
+      >
+        <span>🎉</span>
+        <span class="text-sm text-blue-600">2024 Palleto release</span>
+      </div>
+      <h2 class="text-3xl tracking-tighter sm:text-5xl lg:text-7xl">
+        WE CREATE APPS<br /> YOU WILL USE
+      </h2>
+    </div>
+    <div class="relative -z-10 h-80 w-full overflow-hidden p-12 md:h-full">
+      <div
+        class="absolute -inset-y-2 left-6 w-px bg-primary/20 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+      >
+      </div>
+      <div
+        class="absolute -inset-y-2 right-6 w-px bg-primary/20 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+      >
+      </div>
+      <div
+        class="absolute -inset-x-4 top-6 h-px bg-primary/20 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+      >
+      </div>
+      <div
+        class="absolute -inset-x-4 bottom-6 h-px bg-primary/20 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+      >
+      </div>
+      <div
+        class="relative flex size-full items-center justify-center overflow-hidden rounded-xl bg-black"
+      >
+        <SimpleLogo client:only="svelte" />
+      </div>
+    </div>
+  </div>
+  <div id="products" class="mx-auto max-w-screen-xl px-4 pt-20 xl:px-10">
+    <div class="mb-8 flex w-full flex-col justify-center gap-4">
+      <h3 class="text-center text-3xl md:text-5xl">Out giga apps you like</h3>
+      <span class="text-center text-muted-foreground md:text-lg"
+        >Not quite big but every programmer has a big opportunity</span
+      >
+    </div>
+    <AppsOverview />
+  </div>
+  <div
+    id="team"
+    class="mx-auto max-w-screen-2xl overflow-hidden pt-10 md:py-32"
+  >
+    <div class="mb-8 flex w-full flex-col justify-center gap-4">
+      <h3 class="text-center text-3xl md:text-5xl">Our team members</h3>
+      <span class="text-center text-muted-foreground md:text-lg"
+        >Not quite big but every programmer has a big opportunity</span
+      >
+    </div>
+    <InfinityScrollTeam />
+  </div>
+  <footer class="w-full">
+    <div class="mx-auto flex max-w-7xl justify-start p-6 lg:px-8">
+      <div class="mt-8 md:order-1 md:mt-0">
+        <p class="text-center text-xs leading-5 text-muted-foreground">
+          &copy; 2024 Elixor Inc. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
